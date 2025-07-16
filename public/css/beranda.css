@@ -1,0 +1,102 @@
+/* Font (gunakan jika kamu punya font khusus dari Figma) */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+    color: #212529;
+}
+
+ .struktur-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #1d4ed8;
+        }
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='currentColor' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M1.5 5.5L8 12l6.5-6.5L14 4l-6 6-6-6z'/%3E%3C/svg%3E");
+        }
+
+
+/* Carousel */
+.carousel-inner img {
+    object-fit: cover;
+    height: 600px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+/* Section Headings */
+h2 {
+    font-weight: 700;
+    color: #001F3F;
+}
+
+/* Card UKM */
+.card.ukm-card {
+    transition: transform 0.3s ease;
+}
+
+.card.ukm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card.ukm-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card.ukm-card .card-body {
+    background-color: #f9f9f9;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+
+
+/* Accordion tanpa margin bottom */
+.accordion-item {
+  margin-bottom: 0 !important;
+}
+
+.accordion-button {
+  background-color: #1f459d;
+  color: white;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-body {
+  background-color: #f8f9fa;
+}
+
+
+.container {
+  max-width: 1000px; /* Atur sesuai kebutuhan */
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/* Pusatkan tombol "Selengkapnya" */
+.container button.btn {
+  display: block;
+  margin: 20px auto; /* Tengah & jarak atas bawah */
+}
+
+/* Pusatkan judul Prestasi dan Galeri */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tambahan jarak ke atas untuk Galeri, Prestasi, Struktur */
+.container.my-5 {
+  margin-top: 130px !important; /* jarak ke atas lebih jauh */
+}
+

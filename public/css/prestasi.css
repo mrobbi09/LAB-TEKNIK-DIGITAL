@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #eaeaea;
+  min-height: 100vh;
+}
+
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #0d47a1;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  margin: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 69, 157, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #0d47a1, #1e40af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(31, 69, 157, 0.3);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+/* Prestasi Section */
+.prestasi-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1f459d;
+  margin-bottom: 3rem;
+  text-shadow: 0 2px 4px rgba(31, 69, 157, 0.5);
+}
+
+.slider-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(31, 69, 157, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.card-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.prestasi-card {
+  min-width: 350px;
+  height: 450px; /* FIXED HEIGHT - semua kartu akan sama tinggi */
+  background: linear-gradient(145deg, #ffffff, #f8fafc);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(31, 69, 157, 0.15);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid rgba(31, 69, 157, 0.1);
+  display: flex;
+  flex-direction: column; /* Mengatur layout vertikal */
+}
+
+.prestasi-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(31, 69, 157, 0.25);
+}
+
+.prestasi-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1f459d, #2563eb, #1e40af);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.prestasi-card:hover::before {
+  transform: scaleX(1);
+}
+
+.prestasi-card-link {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.prestasi-img {
+  width: 100%;
+  height: 200px; /* Fixed height untuk gambar */
+  object-fit: cover;
+  background: linear-gradient(45deg, #1f459d, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Mencegah gambar mengecil */
+}
+
+.prestasi-card:hover .prestasi-img {
+  transform: scale(1.05);
+}
+
+.prestasi-info {
+  padding: 1.5rem;
+  flex: 1; /* Mengambil sisa ruang yang tersedia */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Menyebar konten secara merata */
+}
+
+.prestasi-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1f459d;
+  line-height: 1.4;
+  flex-shrink: 0; /* Mencegah judul mengecil */
+}
+
+.tahun {
+  color: #2563eb;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  flex-shrink: 0; /* Mencegah tahun mengecil */
+}
+
+.prestasi-info p:last-child {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  flex: 1; /* Mengambil sisa ruang untuk deskripsi */
+  overflow: hidden; /* Menyembunyikan teks yang terlalu panjang */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Batasi maksimal 4 baris teks */
+  -webkit-box-orient: vertical;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(145deg, #1f459d, #2563eb);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(31, 69, 157, 0.3);
+}
+
+.nav-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 20px rgba(31, 69, 157, 0.4);
+  background: linear-gradient(145deg, #1e40af, #1f459d);
+}
+
+.nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.nav-btn.left {
+  left: 10px;
+}
+
+.nav-btn.right {
+  right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .prestasi-card {
+    min-width: 280px;
+    height: 400px; /* Tinggi kartu untuk mobile */
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .prestasi-section {
+    padding: 2rem 1rem;
+  }
+
+  .slider-container {
+    padding: 1rem;
+  }
+}
+
+/* Loading Animation */
+.prestasi-card {
+  animation: slideInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.prestasi-card:nth-child(1) { animation-delay: 0.1s; }
+.prestasi-card:nth-child(2) { animation-delay: 0.2s; }
+.prestasi-card:nth-child(3) { animation-delay: 0.3s; }
+.prestasi-card:nth-child(4) { animation-delay: 0.4s; }
+.prestasi-card:nth-child(5) { animation-delay: 0.5s; }
+.prestasi-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
