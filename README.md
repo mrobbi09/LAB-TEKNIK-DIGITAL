@@ -70,12 +70,6 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-### 3. Konfigurasi Environment
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
 #### Edit file .env dan sesuaikan konfigurasi database:
 ```bash
 DB_CONNECTION=mysql
